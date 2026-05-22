@@ -1,0 +1,294 @@
+
+/* Tools Page Specific Styles */
+.tools-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.tools-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.tools-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Tools Section */
+.tools-section {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.tool-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--background-light);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.tool-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.tool-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.tool-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Calculator Forms */
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.calculator-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-form label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.calculator-form input,
+.calculator-form select {
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.calculator-form input:focus,
+.calculator-form select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(27, 75, 90, 0.3);
+}
+
+.result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--background-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    font-weight: 600;
+    color: var(--primary-color);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.result.empty {
+    display: none;
+}
+
+/* Risk Assessment */
+.risk-assessment {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.question p {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.question select {
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* Portfolio Analyzer */
+.portfolio-analyzer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.allocation-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Market Data Section */
+.market-data-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.market-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.market-widget {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.market-widget h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.market-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.market-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.market-item .symbol {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.market-item .price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.market-item .change {
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.market-item .change.positive {
+    color: var(--success);
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.market-item .change.negative {
+    color: var(--danger);
+    background: rgba(220, 53, 69, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tools-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .allocation-inputs {
+        grid-template-columns: 1fr;
+    }
+    
+    .market-widgets {
+        grid-template-columns: 1fr;
+    }
+    
+    .tool-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .tools-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tool-card {
+        padding: 1rem;
+    }
+    
+    .market-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}

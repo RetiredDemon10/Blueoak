@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Management - BlueOak Capitals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Better Navbar with Drawer -->
+<nav class="navbar">
+    <div class="nav-container">
+      <!-- Hamburger (Left) -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+  
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="logo-img">
+      </div>
+  
+      <!-- Google Translate -->
+      <div class="nav-translate" id="google_translate_element"></div>
+  
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-menu desktop-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a href="#"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+  
+      <!-- Auth Buttons -->
+      <div class="auth-desktop">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  
+    <!-- Drawer Menu -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-header">
+        <span class="close-drawer" id="close-drawer">&times;</span>
+      </div>
+      <ul class="tnav-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a class="tdropdown-toggle"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="tdropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="drawer-auth">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .logo-img {
+    height: 40px;
+  }
+  .nav-translate {
+    margin-left: 20px;
+  }
+  .nav-menu.desktop-menu {
+    display: none;
+    list-style: none;
+    gap: 20px;
+    padding-left: 0;
+  }
+  .nav-menu.desktop-menu li {
+    position: relative;
+  }
+  .nav-menu.desktop-menu a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+  }
+  .nav-menu.desktop-menu a:hover {
+    background-color: #f0f0f0;
+  }
+  .auth-desktop {
+    display: none;
+  }
+  .auth-btn {
+    padding: 8px 14px;
+    margin-left: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1b4b5a;
+    font-weight: 600;
+  }
+  .auth-btn.signup-btn {
+    background-color: #fff;
+    color: #1b4b5a;
+    border-color: #1b4b5a;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-width: 200px;
+    z-index: 100;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #000;
+    text-decoration: none;
+  }
+  .dropdown-menu a:hover {
+    background-color: #f5f5f5;
+  }
+  .nav-menu a {
+    color: black;
+  }
+  .nav-menu {
+    color: black;
+  }
+  
+  @media(min-width: 768px) {
+    .nav-toggle,
+    .drawer {
+      display: none;
+    }
+    .nav-menu.desktop-menu {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+    .auth-desktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f8f8;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  .drawer.open {
+    left: 0;
+  }
+  .drawer-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .close-drawer {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+  .drawer .tnav-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .drawer .tnav-menu li {
+    margin: 0;
+  }
+  .drawer .tnav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .drawer .tdropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  .drawer .tdropdown-menu li {
+    margin: 10px 0;
+  }
+  
+  /* 🟡 Hover dropdown for drawer */
+  .drawer .dropdown:hover .tdropdown-menu {
+    display: block;
+  }
+  
+  .drawer-auth {
+    margin-top: auto;
+  }
+  </style>
+  
+  <script>
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('drawer').classList.add('open');
+  });
+  document.getElementById('close-drawer').addEventListener('click', () => {
+    document.getElementById('drawer').classList.remove('open');
+  });
+  </script>
+  
+  <!-- Google Translate script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+
+    <!-- Hero Section -->
+    <section class="service-hero portfolio-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Professional Portfolio Management</h1>
+                <p>Expert portfolio management services designed to optimize your investments and maximize returns while managing risk</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Active Management</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Risk Management</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Services -->
+    <section class="portfolio-services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Portfolio Management Services</h2>
+                <p>Comprehensive portfolio management tailored to your investment objectives</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Strategic Asset Allocation</h3>
+                    <p>We develop customized asset allocation strategies based on your risk tolerance, investment timeline, and financial goals.</p>
+                    <ul>
+                        <li>Risk assessment and profiling</li>
+                        <li>Diversification strategies</li>
+                        <li>Regular rebalancing</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Investment Research & Analysis</h3>
+                    <p>Our research team conducts thorough analysis to identify the best investment opportunities across various asset classes.</p>
+                    <ul>
+                        <li>Fundamental analysis</li>
+                        <li>Technical analysis</li>
+                        <li>Market research</li>
+                        <li>Due diligence</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Active Portfolio Monitoring</h3>
+                    <p>Continuous monitoring and adjustment of your portfolio to respond to market changes and optimize performance.</p>
+                    <ul>
+                        <li>Real-time monitoring</li>
+                        <li>Performance tracking</li>
+                        <li>Risk management</li>
+                        <li>Tactical adjustments</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Tax-Efficient Strategies</h3>
+                    <p>Implementation of tax-efficient investment strategies to maximize your after-tax returns.</p>
+                    <ul>
+                        <li>Tax-loss harvesting</li>
+                        <li>Asset location optimization</li>
+                        <li>Tax-deferred accounts</li>
+                        <li>Capital gains management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Process -->
+    <section class="portfolio-process">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Portfolio Management Process</h2>
+                <p>A systematic approach to managing your investments</p>
+            </div>
+            <div class="process-steps">
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Discovery & Assessment</h3>
+                        <p>We begin by understanding your financial goals, risk tolerance, and investment preferences through comprehensive consultation.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Strategy Development</h3>
+                        <p>Based on your profile, we develop a customized investment strategy and asset allocation plan tailored to your needs.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Portfolio Construction</h3>
+                        <p>We carefully select and construct your portfolio using our research-driven approach and proven investment methodologies.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Ongoing Management</h3>
+                        <p>Continuous monitoring, rebalancing, and optimization of your portfolio to ensure it stays aligned with your objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics -->
+    <section class="performance-metrics">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Portfolio Performance Metrics</h2>
+                <p>Track record of delivering superior risk-adjusted returns</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="metric-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="metric-value">18.5%</div>
+                    <div class="metric-label">Average Annual Return</div>
+                    <div class="metric-period">Over 5 Years</div>
+                </div>
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="metric-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="metric-value">1.2</div>
+                    <div class="metric-label">Sharpe Ratio</div>
+                    <div class="metric-period">Risk-Adjusted Performance</div>
+                </div>
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="metric-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="metric-value">12.8%</div>
+                    <div class="metric-label">Maximum Drawdown</div>
+                    <div class="metric-period">Worst Case Scenario</div>
+                </div>
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="metric-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="metric-value">87%</div>
+                    <div class="metric-label">Win Rate</div>
+                    <div class="metric-period">Positive Return Months</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to Optimize Your Portfolio?</h2>
+                <p>Let our expert portfolio managers help you achieve your investment goals with professional portfolio management services.</p>
+                <div class="cta-buttons">
+                    <button class="cta-btn primary" onclick="openModal('signupModal')">Get Started Today</button>
+                    <button class="cta-btn secondary">Schedule Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="footer-logo">
+                    <p>Your trusted partner in building wealth and securing financial freedom through professional investment management.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="investment-plans.html">Investment Plans</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="portfolio-management.html">Portfolio Management</a></li>
+                        <li><a href="financial-planning.html">Financial Planning</a></li>
+                        <li><a href="retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="tools.html">Investment Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest market insights and investment tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BlueOak Capitals. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-submit-btn">Login</button>
+                <p class="auth-switch">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required> I agree to the Terms & Conditions
+                    </label>
+                </div>
+                <button type="submit" class="auth-submit-btn">Create Account</button>
+                <p class="auth-switch">Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

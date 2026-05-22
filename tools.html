@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Tools - BlueOak Capitals</title>
+    <link rel="stylesheet" href="toolstyle.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Better Navbar with Drawer -->
+<nav class="navbar">
+    <div class="nav-container">
+      <!-- Hamburger (Left) -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+  
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="logo-img">
+      </div>
+  
+      <!-- Google Translate -->
+      <div class="nav-translate" id="google_translate_element"></div>
+  
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-menu desktop-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a href="#"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+  
+      <!-- Auth Buttons -->
+      <div class="auth-desktop">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  
+    <!-- Drawer Menu -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-header">
+        <span class="close-drawer" id="close-drawer">&times;</span>
+      </div>
+      <ul class="tnav-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a class="tdropdown-toggle"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="tdropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="drawer-auth">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .logo-img {
+    height: 40px;
+  }
+  .nav-translate {
+    margin-left: 20px;
+  }
+  .nav-menu.desktop-menu {
+    display: none;
+    list-style: none;
+    gap: 20px;
+    padding-left: 0;
+  }
+  .nav-menu.desktop-menu li {
+    position: relative;
+  }
+  .nav-menu.desktop-menu a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+  }
+  .nav-menu.desktop-menu a:hover {
+    background-color: #f0f0f0;
+  }
+  .auth-desktop {
+    display: none;
+  }
+  .auth-btn {
+    padding: 8px 14px;
+    margin-left: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1b4b5a;
+    font-weight: 600;
+  }
+  .auth-btn.signup-btn {
+    background-color: #fff;
+    color: #1b4b5a;
+    border-color: #1b4b5a;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-width: 200px;
+    z-index: 100;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #000;
+    text-decoration: none;
+  }
+  .dropdown-menu a:hover {
+    background-color: #f5f5f5;
+  }
+  .nav-menu a {
+    color: black;
+  }
+  .nav-menu {
+    color: black;
+  }
+  
+  @media(min-width: 768px) {
+    .nav-toggle,
+    .drawer {
+      display: none;
+    }
+    .nav-menu.desktop-menu {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+    .auth-desktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f8f8;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  .drawer.open {
+    left: 0;
+  }
+  .drawer-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .close-drawer {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+  .drawer .tnav-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .drawer .tnav-menu li {
+    margin: 0;
+  }
+  .drawer .tnav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .drawer .tdropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  .drawer .tdropdown-menu li {
+    margin: 10px 0;
+  }
+  
+  /* 🟡 Hover dropdown for drawer */
+  .drawer .dropdown:hover .tdropdown-menu {
+    display: block;
+  }
+  
+  .drawer-auth {
+    margin-top: auto;
+  }
+  </style>
+  
+  <script>
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('drawer').classList.add('open');
+  });
+  document.getElementById('close-drawer').addEventListener('click', () => {
+    document.getElementById('drawer').classList.remove('open');
+  });
+  </script>
+  
+  <!-- Google Translate script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Investment Tools & Calculators</h1>
+                <p>Make informed investment decisions with our comprehensive suite of financial tools and calculators</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="tools-grid">
+                <!-- Investment Calculator -->
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tool-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Investment Calculator</h3>
+                    <p>Calculate potential returns on your investments with different plans and time horizons.</p>
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label>Investment Amount ($)</label>
+                            <input type="number" id="inv-amount" placeholder="10000" min="1000">
+                        </div>
+                        <div class="form-group">
+                            <label>Expected Return (%)</label>
+                            <input type="number" id="inv-return" placeholder="15" min="1" max="50">
+                        </div>
+                        <div class="form-group">
+                            <label>Time Period (Years)</label>
+                            <input type="number" id="inv-years" placeholder="5" min="1" max="30">
+                        </div>
+                        <button class="calculate-btn" onclick="calculateInvestment()">Calculate</button>
+                        <div class="result" id="inv-result"></div>
+                    </div>
+                </div>
+
+                <!-- Retirement Calculator -->
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tool-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Retirement Calculator</h3>
+                    <p>Plan your retirement savings and see how much you need to save monthly.</p>
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label>Current Age</label>
+                            <input type="number" id="current-age" placeholder="30" min="18" max="65">
+                        </div>
+                        <div class="form-group">
+                            <label>Retirement Age</label>
+                            <input type="number" id="retirement-age" placeholder="65" min="50" max="80">
+                        </div>
+                        <div class="form-group">
+                            <label>Desired Monthly Income ($)</label>
+                            <input type="number" id="monthly-income" placeholder="5000" min="1000">
+                        </div>
+                        <button class="calculate-btn" onclick="calculateRetirement()">Calculate</button>
+                        <div class="result" id="retirement-result"></div>
+                    </div>
+                </div>
+
+                <!-- Risk Assessment -->
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Risk Assessment Tool</h3>
+                    <p>Determine your risk tolerance and find the right investment strategy for you.</p>
+                    <div class="risk-assessment">
+                        <div class="question">
+                            <p>What is your investment experience?</p>
+                            <select id="experience">
+                                <option value="1">Beginner</option>
+                                <option value="2">Some experience</option>
+                                <option value="3">Experienced</option>
+                                <option value="4">Very experienced</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <p>How long do you plan to invest?</p>
+                            <select id="timeline">
+                                <option value="1">Less than 2 years</option>
+                                <option value="2">2-5 years</option>
+                                <option value="3">5-10 years</option>
+                                <option value="4">More than 10 years</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <p>How would you react to a 20% portfolio loss?</p>
+                            <select id="reaction">
+                                <option value="1">Sell everything immediately</option>
+                                <option value="2">Sell some investments</option>
+                                <option value="3">Hold and wait</option>
+                                <option value="4">Buy more at lower prices</option>
+                            </select>
+                        </div>
+                        <button class="calculate-btn" onclick="assessRisk()">Assess Risk</button>
+                        <div class="result" id="risk-result"></div>
+                    </div>
+                </div>
+
+                <!-- Compound Interest Calculator -->
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <h3>Compound Interest Calculator</h3>
+                    <p>See the power of compound interest and how your money can grow over time.</p>
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label>Principal Amount ($)</label>
+                            <input type="number" id="principal" placeholder="10000" min="100">
+                        </div>
+                        <div class="form-group">
+                            <label>Annual Interest Rate (%)</label>
+                            <input type="number" id="interest-rate" placeholder="8" min="0.1" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label>Compounding Frequency</label>
+                            <select id="frequency">
+                                <option value="1">Annually</option>
+                                <option value="4">Quarterly</option>
+                                <option value="12">Monthly</option>
+                                <option value="365">Daily</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Time Period (Years)</label>
+                            <input type="number" id="time-period" placeholder="10" min="1">
+                        </div>
+                        <button class="calculate-btn" onclick="calculateCompound()">Calculate</button>
+                        <div class="result" id="compound-result"></div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Diversification -->
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="tool-icon">
+                        <i class="fas fa-pie-chart"></i>
+                    </div>
+                    <h3>Portfolio Analyzer</h3>
+                    <p>Analyze your portfolio allocation and get recommendations for better diversification.</p>
+                    <div class="portfolio-analyzer">
+                        <div class="allocation-inputs">
+                            <div class="form-group">
+                                <label>Stocks (%)</label>
+                                <input type="number" id="stocks" placeholder="60" min="0" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label>Bonds (%)</label>
+                                <input type="number" id="bonds" placeholder="30" min="0" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label>Real Estate (%)</label>
+                                <input type="number" id="real-estate" placeholder="10" min="0" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label>Cash (%)</label>
+                                <input type="number" id="cash" placeholder="0" min="0" max="100">
+                            </div>
+                        </div>
+                        <button class="calculate-btn" onclick="analyzePortfolio()">Analyze Portfolio</button>
+                        <div class="result" id="portfolio-result"></div>
+                        <canvas id="portfolioChart" width="300" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Loan Calculator -->
+                <div class="tool-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="tool-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Loan Calculator</h3>
+                    <p>Calculate monthly payments for mortgages, car loans, and other financing options.</p>
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label>Loan Amount ($)</label>
+                            <input type="number" id="loan-amount" placeholder="300000" min="1000">
+                        </div>
+                        <div class="form-group">
+                            <label>Interest Rate (% per year)</label>
+                            <input type="number" id="loan-rate" placeholder="4.5" min="0.1" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label>Loan Term (Years)</label>
+                            <input type="number" id="loan-term" placeholder="30" min="1">
+                        </div>
+                        <button class="calculate-btn" onclick="calculateLoan()">Calculate</button>
+                        <div class="result" id="loan-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Data Section -->
+    <section class="market-data-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Live Market Data</h2>
+                <p>Stay updated with real-time market information</p>
+            </div>
+            <div class="market-widgets">
+                <div class="market-widget" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Major Indices</h4>
+                    <div class="market-list">
+                        <div class="market-item">
+                            <span class="symbol">S&P 500</span>
+                            <span class="price">4,567.89</span>
+                            <span class="change positive">+1.23%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="symbol">NASDAQ</span>
+                            <span class="price">14,234.56</span>
+                            <span class="change positive">+0.87%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="symbol">DOW JONES</span>
+                            <span class="price">34,567.12</span>
+                            <span class="change negative">-0.45%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="market-widget" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Commodities</h4>
+                    <div class="market-list">
+                        <div class="market-item">
+                            <span class="symbol">Gold</span>
+                            <span class="price">$1,987.45</span>
+                            <span class="change positive">+0.78%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="symbol">Silver</span>
+                            <span class="price">$24.67</span>
+                            <span class="change negative">-1.23%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="symbol">Oil (WTI)</span>
+                            <span class="price">$78.45</span>
+                            <span class="change positive">+2.15%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="market-widget" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Currencies</h4>
+                    <div class="market-list">
+                        <div class="market-item">
+                            <span class="symbol">EUR/USD</span>
+                            <span class="price">1.0876</span>
+                            <span class="change positive">+0.12%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="symbol">GBP/USD</span>
+                            <span class="price">1.2543</span>
+                            <span class="change negative">-0.34%</span>
+                        </div>
+                        <div class="market-item">
+                            <span class="symbol">USD/JPY</span>
+                            <span class="price">149.87</span>
+                            <span class="change positive">+0.56%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="footer-logo">
+                    <p>Your trusted partner in building wealth and securing financial freedom through professional investment management.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="investment-plans.html">Investment Plans</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="portfolio-management.html">Portfolio Management</a></li>
+                        <li><a href="financial-planning.html">Financial Planning</a></li>
+                        <li><a href="retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="tools.html">Investment Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest market insights and investment tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BlueOak Capitals. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-submit-btn">Login</button>
+                <p class="auth-switch">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required> I agree to the Terms & Conditions
+                    </label>
+                </div>
+                <button type="submit" class="auth-submit-btn">Create Account</button>
+                <p class="auth-switch">Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login</a></p>
+            </form>
+        </div>
+    </div>
+            
+<div id="amk_footer">
+    <div class="mgm" style="display: none;">
+  <div class="txt" style="color:#b6b8b8;">Someone from <b></b> just earned <a href="javascript:void(0);" onclick="javascript:void(0);"></a></div>
+  </div>
+  
+  
+  <style>
+  .mgm {
+  border-radius: 7px;
+  position: fixed;
+  z-index: 200;
+  bottom: 80px;
+  left: 50px;
+  background: #2c254a;
+  padding: 20px 27px;
+  box-shadow: 0px 5px 15px 0px rgba(0,0,0,.3);
+  }
+  .mgm a {
+  font-weight: 1000;
+  display: block;
+  color:#b6b8b8;
+  font-size: large;
+  
+  }
+  .mgm a, .mgm a:active {
+  transition: all .2s ease;
+  color:#f2d516;
+  }
+  </style>
+  <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.html"></script><script type="text/javascript">
+  var listCountries = ['Argentina', 'USA', 'Germany', 'France', 'Italy', 'South Korea', 'Australia', 'Norway', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Spain', 'Austria', 'Venezuela', 'South Africa', 'Sweden', 'South Korea', 'China', 'Italy', 'Germany', 'United Kingdom', 'Bahrain', 'Greece', 'Cuba', 'Bulgaria', 'Portugal', 'Austria', 'Cyprus', 'Panama', 'Asia', 'Norway', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus','Spain','Norway'];
+  var listPlans = ['$2000','$1000','$50000','$15000','$10000','$100000','$20000','$1500','$30000','$40000','$1200','$60000','$3400', '$7000', '$25000', '$25000', '$35000', '$5000','$7000','$45000','$3500','$5000','$12500','$9500'];
+  interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+  var run = setInterval(request, interval);
+  
+  function request() {
+    clearInterval(run);
+    interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+    var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+    var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+    var msg = 'Someone from <b>' + country + '</b> just earned  <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
+    $(".mgm .txt").html(msg);
+    $(".mgm").stop(true).fadeIn(300);
+    window.setTimeout(function() {
+        $(".mgm").stop(true).fadeOut(300);
+    }, 6000);
+    run = setInterval(request, interval);
+  }
+  </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="tools.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

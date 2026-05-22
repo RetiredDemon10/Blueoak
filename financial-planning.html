@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Plans - BlueOak Capitals</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="services.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+
+<!-- Better Navbar with Drawer -->
+<nav class="navbar">
+    <div class="nav-container">
+      <!-- Hamburger (Left) -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+  
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="logo-img">
+      </div>
+  
+      <!-- Google Translate -->
+      <div class="nav-translate" id="google_translate_element"></div>
+  
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-menu desktop-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a href="#"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+  
+      <!-- Auth Buttons -->
+      <div class="auth-desktop">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  
+    <!-- Drawer Menu -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-header">
+        <span class="close-drawer" id="close-drawer">&times;</span>
+      </div>
+      <ul class="tnav-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a class="tdropdown-toggle"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="tdropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="drawer-auth">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .logo-img {
+    height: 40px;
+  }
+  .nav-translate {
+    margin-left: 20px;
+  }
+  .nav-menu.desktop-menu {
+    display: none;
+    list-style: none;
+    gap: 20px;
+    padding-left: 0;
+  }
+  .nav-menu.desktop-menu li {
+    position: relative;
+  }
+  .nav-menu.desktop-menu a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+  }
+  .nav-menu.desktop-menu a:hover {
+    background-color: #f0f0f0;
+  }
+  .auth-desktop {
+    display: none;
+  }
+  .auth-btn {
+    padding: 8px 14px;
+    margin-left: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1b4b5a;
+    font-weight: 600;
+  }
+  .auth-btn.signup-btn {
+    background-color: #fff;
+    color: #1b4b5a;
+    border-color: #1b4b5a;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-width: 200px;
+    z-index: 100;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #000;
+    text-decoration: none;
+  }
+  .dropdown-menu a:hover {
+    background-color: #f5f5f5;
+  }
+  .nav-menu a {
+    color: black;
+  }
+  .nav-menu {
+    color: black;
+  }
+  
+  @media(min-width: 768px) {
+    .nav-toggle,
+    .drawer {
+      display: none;
+    }
+    .nav-menu.desktop-menu {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+    .auth-desktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f8f8;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  .drawer.open {
+    left: 0;
+  }
+  .drawer-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .close-drawer {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+  .drawer .tnav-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .drawer .tnav-menu li {
+    margin: 0;
+  }
+  .drawer .tnav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .drawer .tdropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  .drawer .tdropdown-menu li {
+    margin: 10px 0;
+  }
+  
+  /* 🟡 Hover dropdown for drawer */
+  .drawer .dropdown:hover .tdropdown-menu {
+    display: block;
+  }
+  
+  .drawer-auth {
+    margin-top: auto;
+  }
+  </style>
+  
+  <script>
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('drawer').classList.add('open');
+  });
+  document.getElementById('close-drawer').addEventListener('click', () => {
+    document.getElementById('drawer').classList.remove('open');
+  });
+  </script>
+  
+  <!-- Google Translate script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Investment Plans</h1>
+                <p>Choose from our carefully crafted investment plans designed to maximize your returns while managing risk</p>
+                <div class="hero-stats">
+                    <div class="stat">
+
+                        <span style="color: coral;" class="stat-number">18.5%</span>
+                        <span  class="stat-label">Average Annual Return</span>
+                    </div>
+                    <div class="stat">
+                        <span style="color: coral;" class="stat-number">15,000+</span>
+                        <span class="stat-label">Active Investors</span>
+                    </div>
+                    <div class="stat">
+                        <span style="color: coral;" class="stat-number">$2.5B</span>
+                        <span class="stat-label">Assets Under Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Plans -->
+    <section class="plans-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Choose Your Investment Plan</h2>
+                <p>Select the plan that best fits your investment goals and risk tolerance</p>
+            </div>
+            <div class="plans-grid">
+                <!-- Starter Plan -->
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Starter Plan</h3>
+                        <div class="plan-price">20% <span>Daily ROI</span></div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="detail-item">
+                            <span class="label">Minimum Investment:</span>
+                            <span class="value">$30</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Maximum Investment:</span>
+                            <span class="value">$299</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Duration:</span>
+                            <span class="value">24 hours</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Risk Level:</span>
+                            <span class="value risk-low">Low</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <h4>Features Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Basic Portfolio Management</li>
+                            <li><i class="fas fa-check"></i> Monthly Performance Reports</li>
+                            <li><i class="fas fa-check"></i> Email Support</li>
+                            <li><i class="fas fa-check"></i> Mobile App Access</li>
+                            <li><i class="fas fa-check"></i> Automatic Reinvestment</li>
+                        </ul>
+                    </div>
+                    <button class="plan-btn">Choose Starter Plan</button>
+                </div>
+
+                <!-- Growth Plan -->
+                <div class="plan-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Silver Plan</h3>
+                        <div class="plan-price">30% <span>Daily ROI</span></div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="detail-item">
+                            <span class="label">Minimum Investment:</span>
+                            <span class="value">$300</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Maximum Investment:</span>
+                            <span class="value">$999</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Duration:</span>
+                            <span class="value">24 hours</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Risk Level:</span>
+                            <span class="value risk-medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <h4>Features Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Advanced Portfolio Management</li>
+                            <li><i class="fas fa-check"></i> Weekly Performance Reports</li>
+                            <li><i class="fas fa-check"></i> Priority Phone & Email Support</li>
+                            <li><i class="fas fa-check"></i> Mobile App with Advanced Features</li>
+                            <li><i class="fas fa-check"></i> Quarterly Strategy Reviews</li>
+                            <li><i class="fas fa-check"></i> Tax Optimization Strategies</li>
+                        </ul>
+                    </div>
+                    <button class="plan-btn">Choose Silver Plan</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Gold Plan</h3>
+                        <div class="plan-price">45% <span>Daily ROI</span></div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="detail-item">
+                            <span class="label">Minimum Investment:</span>
+                            <span class="value">$1,000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Maximum Investment:</span>
+                            <span class="value">$2,999</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Duration:</span>
+                            <span class="value">24 hours</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Risk Level:</span>
+                            <span class="value risk-high">Medium-High</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <h4>Features Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Gold Portfolio Management</li>
+                            <li><i class="fas fa-check"></i> Daily Performance Reports</li>
+                            <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                            <li><i class="fas fa-check"></i> VIP Mobile App Access</li>
+                            <li><i class="fas fa-check"></i> Monthly Strategy Consultations</li>
+                            <li><i class="fas fa-check"></i> Advanced Tax Planning</li>
+                            <li><i class="fas fa-check"></i> Alternative Investment Access</li>
+                        </ul>
+                    </div>
+                    <button class="plan-btn">Choose Gold Plan</button>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Platinum Plan</h3>
+                        <div class="plan-price">60% <span>Daily ROI</span></div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="detail-item">
+                            <span class="label">Minimum Investment:</span>
+                            <span class="value">$3,000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Maximum Investment:</span>
+                            <span class="value">$6,999</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Duration:</span>
+                            <span class="value">24 hours</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Risk Level:</span>
+                            <span class="value risk-low">Low</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <h4>Features Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Platinum Portfolio Management</li>
+                            <li><i class="fas fa-check"></i> Real-time Performance Tracking</li>
+                            <li><i class="fas fa-check"></i> Senior Account Manager</li>
+                            <li><i class="fas fa-check"></i> Exclusive Investment Opportunities</li>
+                            <li><i class="fas fa-check"></i> Bi-weekly Strategy Sessions</li>
+                            <li><i class="fas fa-check"></i> Comprehensive Tax Services</li>
+                            <li><i class="fas fa-check"></i> Private Equity Access</li>
+                            <li><i class="fas fa-check"></i> Concierge Financial Services</li>
+                        </ul>
+                    </div>
+                    <button class="plan-btn">Choose Platinum Plan</button>
+                </div>
+
+                <!-- Platinum Plan -->
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Diamond Plan</h3>
+                        <div class="plan-price">75% <span>Daily ROI</span></div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="detail-item">
+                            <span class="label">Minimum Investment:</span>
+                            <span class="value">$7,000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Maximum Investment:</span>
+                            <span class="value">$14,999</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Duration:</span>
+                            <span class="value">24 hours</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Risk Level:</span>
+                            <span class="value risk-low">Low</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <h4>Features Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Diamond Portfolio Management</li>
+                            <li><i class="fas fa-check"></i> 24/7 Performance Monitoring</li>
+                            <li><i class="fas fa-check"></i> Executive Account Manager</li>
+                            <li><i class="fas fa-check"></i> Institutional-Grade Investments</li>
+                            <li><i class="fas fa-check"></i> Weekly Strategy Reviews</li>
+                            <li><i class="fas fa-check"></i> Full-Service Tax Planning</li>
+                            <li><i class="fas fa-check"></i> Hedge Fund Access</li>
+                            <li><i class="fas fa-check"></i> White-Glove Service</li>
+                            <li><i class="fas fa-check"></i> Estate Planning Services</li>
+                        </ul>
+                    </div>
+                    <button class="plan-btn">Choose Diamond Plan</button>
+                </div>
+
+                <!-- Diamond Plan -->
+                <div class="plan-card exclusive" data-aos="fade-up" data-aos-delay="600">
+                    <div class="plan-badge">Exclusive</div>
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-diamond"></i>
+                        </div>
+                        <h3>Elite Plan</h3>
+                        <div class="plan-price">100% <span>Daily ROI</span></div>
+                    </div>
+                    <div class="plan-details">
+                        <div class="detail-item">
+                            <span class="label">Minimum Investment:</span>
+                            <span class="value">$15,000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Maximum Investment:</span>
+                            <span class="value">Unlimited</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Duration:</span>
+                            <span class="value">24 hours</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Risk Level:</span>
+                            <span class="value risk-low">Low</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <h4>Features Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Elite-Tier Portfolio Management</li>
+                            <li><i class="fas fa-check"></i> Real-time Global Monitoring</li>
+                            <li><i class="fas fa-check"></i> C-Suite Account Management</li>
+                            <li><i class="fas fa-check"></i> Exclusive Investment Deals</li>
+                            <li><i class="fas fa-check"></i> Daily Strategy Consultations</li>
+                            <li><i class="fas fa-check"></i> Comprehensive Wealth Management</li>
+                            <li><i class="fas fa-check"></i> Private Banking Services</li>
+                            <li><i class="fas fa-check"></i> Family Office Services</li>
+                            <li><i class="fas fa-check"></i> Global Investment Opportunities</li>
+                            <li><i class="fas fa-check"></i> Philanthropic Advisory</li>
+                        </ul>
+                    </div>
+                    <button class="plan-btn">Contact for Elite Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Comparison -->
+    <section class="plan-comparison">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Plan Comparison</h2>
+                <p>Compare features across all investment plans</p>
+            </div>
+            <div class="comparison-table" data-aos="fade-up" data-aos-delay="200">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Starter</th>
+                            <th>Silver</th>
+                            <th>Gold</th>
+                            <th>Platinum</th>
+                            <th>Diamond</th>
+                            <th>Elite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Expected ROI</td>
+                            <td>20%</td>
+                            <td>30%</td>
+                            <td>45%</td>
+                            <td>60%</td>
+                            <td>75%</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Minimum Investment</td>
+                            <td>$30</td>
+                            <td>$300</td>
+                            <td>$1,000</td>
+                            <td>$3,000</td>
+                            <td>$7,000</td>
+                            <td>$15,000</td>
+                        </tr>
+                        <tr>
+
+                            <td>Duration</td>
+                            <td>Daily</td>
+                            <td>Daily</td>
+                            <td>Daily</td>
+                            <td>Daily</td>
+                            <td>Daily</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>Account Manager</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile App</td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Tax Optimization</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Alternative Investments</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Private Equity Access</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="footer-logo">
+                    <p>Your trusted partner in building wealth and securing financial freedom through professional investment management.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="investment-plans.html">Investment Plans</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="portfolio-management.html">Portfolio Management</a></li>
+                        <li><a href="financial-planning.html">Financial Planning</a></li>
+                        <li><a href="retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="tools.html">Investment Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest market insights and investment tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BlueOak Capitals. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-submit-btn">Login</button>
+                <p class="auth-switch">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required> I agree to the Terms & Conditions
+                    </label>
+                </div>
+                <button type="submit" class="auth-submit-btn">Create Account</button>
+                <p class="auth-switch">Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

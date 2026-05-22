@@ -1,0 +1,229 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.shero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+
+.shero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+.shero-background.active {
+    opacity: 1;
+}
+
+.shero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+.shero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.shero-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: -1px;
+}
+
+.shero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    line-height: 1.4;
+}
+
+.shero-cta {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #003049, #000);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+    border: 2px solid transparent;
+}
+
+.shero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,107,107,0.6);
+    background: linear-gradient(45deg, #003049, #000);
+}
+
+.shero-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.snav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.snav-dot.active {
+    background: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.snav-dot:hover {
+    background: rgba(255,255,255,0.8);
+    transform: scale(1.1);
+}
+
+.shero-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(0,0,0,0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shero-arrows:hover {
+    color: white;
+    background: rgba(0,0,0,0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.sarrow-left {
+    left: 30px;
+}
+
+.sarrow-right {
+    right: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .shero-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+    }
+    .shero{
+        height: 80vh;
+    }
+
+    .shero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .shero-cta {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .shero-arrows {
+        display: none;
+    }
+
+    .shero-nav {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shero-title {
+        font-size: 2rem;
+    }
+
+    .shero-subtitle {
+        font-size: 1rem;
+    }
+
+    .shero-content {
+        padding: 0 15px;
+    }
+
+    .snav-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Animation for content fade */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content.fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}

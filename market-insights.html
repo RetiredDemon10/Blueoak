@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Insights - BlueOak Capitals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="market-insights.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Better Navbar with Drawer -->
+<nav class="navbar">
+    <div class="nav-container">
+      <!-- Hamburger (Left) -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+  
+      <!-- Logo -->
+      <div class="nav-logo">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="logo-img">
+      </div>
+  
+      <!-- Google Translate -->
+      <div class="nav-translate" id="google_translate_element"></div>
+  
+      <!-- Desktop Nav Menu -->
+      <ul class="nav-menu desktop-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a href="#"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+  
+      <!-- Auth Buttons -->
+      <div class="auth-desktop">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  
+    <!-- Drawer Menu -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-header">
+        <span class="close-drawer" id="close-drawer">&times;</span>
+      </div>
+      <ul class="tnav-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="/market-insights.html"><i class="fas fa-chart-line"></i> Market Insights</a></li>
+        <li class="dropdown">
+          <a class="tdropdown-toggle"><i class="fas fa-briefcase"></i> Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="tdropdown-menu">
+            <li><a href="investment-plans.html">Investment Plans</a></li>
+            <li><a href="portfolio-management.html">Portfolio Management</a></li>
+            <li><a href="financial-planning.html">Financial Planning</a></li>
+            <li><a href="retirement-planning.html">Retirement Planning</a></li>
+          </ul>
+        </li>
+        <li><a href="tools.html"><i class="fas fa-tools"></i> Tools</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="drawer-auth">
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn login-btn">Login</a>
+        <a href="https://blueoakcapitals.elaxtradesx.com/register" class="auth-btn signup-btn">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .logo-img {
+    height: 40px;
+  }
+  .nav-translate {
+    margin-left: 20px;
+  }
+  .nav-menu.desktop-menu {
+    display: none;
+    list-style: none;
+    gap: 20px;
+    padding-left: 0;
+  }
+  .nav-menu.desktop-menu li {
+    position: relative;
+  }
+  .nav-menu.desktop-menu a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+  }
+  .nav-menu.desktop-menu a:hover {
+    background-color: #f0f0f0;
+  }
+  .auth-desktop {
+    display: none;
+  }
+  .auth-btn {
+    padding: 8px 14px;
+    margin-left: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1b4b5a;
+    font-weight: 600;
+  }
+  .auth-btn.signup-btn {
+    background-color: #fff;
+    color: #1b4b5a;
+    border-color: #1b4b5a;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-width: 200px;
+    z-index: 100;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #000;
+    text-decoration: none;
+  }
+  .dropdown-menu a:hover {
+    background-color: #f5f5f5;
+  }
+  .nav-menu a {
+    color: black;
+  }
+  .nav-menu {
+    color: black;
+  }
+  
+  @media(min-width: 768px) {
+    .nav-toggle,
+    .drawer {
+      display: none;
+    }
+    .nav-menu.desktop-menu {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+    .auth-desktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f8f8;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  .drawer.open {
+    left: 0;
+  }
+  .drawer-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .close-drawer {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+  .drawer .tnav-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .drawer .tnav-menu li {
+    margin: 0;
+  }
+  .drawer .tnav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .drawer .tdropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  .drawer .tdropdown-menu li {
+    margin: 10px 0;
+  }
+  
+  /* 🟡 Hover dropdown for drawer */
+  .drawer .dropdown:hover .tdropdown-menu {
+    display: block;
+  }
+  
+  .drawer-auth {
+    margin-top: auto;
+  }
+  </style>
+  
+  <script>
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('drawer').classList.add('open');
+  });
+  document.getElementById('close-drawer').addEventListener('click', () => {
+    document.getElementById('drawer').classList.remove('open');
+  });
+  </script>
+  
+  <!-- Google Translate script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+    <!-- Hero Section -->
+    <section class="insights-hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Market Insights & Analysis</h1>
+                <p>Stay ahead of market trends with expert analysis and real-time data from our investment professionals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="market-overview">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Market Overview</h2>
+                <p>Current market conditions and key indicators</p>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">
+                        <h3>Market Sentiment</h3>
+                        <div class="sentiment-indicator bullish">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>Bullish</span>
+                        </div>
+                    </div>
+                    <div class="sentiment-meter">
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 75%"></div>
+                        </div>
+                        <div class="meter-labels">
+                            <span>Bearish</span>
+                            <span>Neutral</span>
+                            <span>Bullish</span>
+                        </div>
+                    </div>
+                    <p>Current market sentiment shows strong bullish momentum with increased investor confidence.</p>
+                </div>
+                <div class="overview-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <h3>Volatility Index (VIX)</h3>
+                        <div class="vix-value">
+                            <span class="value">18.45</span>
+                            <span class="change negative">-2.3%</span>
+                        </div>
+                    </div>
+                    <div class="vix-chart">
+                        <canvas id="vixChart" width="300" height="150"></canvas>
+                    </div>
+                    <p>Low volatility indicates stable market conditions with reduced uncertainty.</p>
+                </div>
+                <div class="overview-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-header">
+                        <h3>Economic Indicators</h3>
+                    </div>
+                    <div class="indicators-list">
+                        <div class="indicator-item">
+                            <span class="indicator-name">GDP Growth</span>
+                            <span class="indicator-value positive">+2.4%</span>
+                        </div>
+                        <div class="indicator-item">
+                            <span class="indicator-name">Inflation Rate</span>
+                            <span class="indicator-value">3.2%</span>
+                        </div>
+                        <div class="indicator-item">
+                            <span class="indicator-name">Unemployment</span>
+                            <span class="indicator-value positive">3.7%</span>
+                        </div>
+                        <div class="indicator-item">
+                            <span class="indicator-name">Fed Rate</span>
+                            <span class="indicator-value">5.25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Analysis -->
+    <section class="featured-analysis">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Featured Market Analysis</h2>
+                <p>In-depth analysis from our expert research team</p>
+            </div>
+            <div class="analysis-grid">
+                <article class="analysis-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="analysis-image">
+                        <img src="/assets/tabtrader-com-q7hV_tY4n6E-unsplash.jpg" alt="Q4 Market Outlook">
+                        <div class="analysis-category">Market Outlook</div>
+                    </div>
+                    <div class="analysis-content">
+                        <div class="analysis-meta">
+                            <span class="date">December 15, 2024</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                        <h3>Q4 2024 Market Outlook: Navigating Uncertainty</h3>
+                        <p>As we enter the final quarter of 2024, markets face a complex landscape of opportunities and challenges. Our analysis reveals key sectors poised for growth and potential risks to monitor.</p>
+                        <div class="analysis-tags">
+                            <span class="tag">Market Analysis</span>
+                            <span class="tag">Q4 Outlook</span>
+                            <span class="tag">Investment Strategy</span>
+                        </div>
+                        <a href="#" class="read-more-btn">Read Full Analysis <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="analysis-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="analysis-image">
+                        <img src="/assets/anne-nygard-t0rMooxmZc0-unsplash.jpg" alt="Tech Sector Analysis">
+                        <div class="analysis-category">Sector Focus</div>
+                    </div>
+                    <div class="analysis-content">
+                        <div class="analysis-meta">
+                            <span class="date">December 12, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>Technology Sector: AI Revolution Continues</h3>
+                        <p>The technology sector remains a key driver of market performance, with artificial intelligence leading the charge.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="analysis-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="analysis-image">
+                        <img src="/assets/samson-ZGjbiukp_-A-unsplash.jpg" alt="Bond Market Update">
+                        <div class="analysis-category">Fixed Income</div>
+                    </div>
+                    <div class="analysis-content">
+                        <div class="analysis-meta">
+                            <span class="date">December 10, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>Bond Market Dynamics in Rising Rate Environment</h3>
+                        <p>Understanding how bond investments perform in the current interest rate environment and positioning strategies.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Data Dashboard -->
+    <section class="market-dashboard">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Live Market Dashboard</h2>
+                <p>Real-time market data and performance metrics</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Major Indices Performance</h4>
+                    <div class="indices-chart">
+                        <!-- trading view 2 -->
+<div id="tradingview_widgetss"></div>
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+    new TradingView.widget({
+        "width": "100%",
+        "height": 500,
+        "symbol": "NASDAQ:AAPL",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_widget"
+    });
+</script>
+                        <!-- <canvas id="indicesChart" width="400" height="250"></canvas> -->
+                    </div>
+                </div>
+                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Sector Performance</h4>
+                    <div class="sector-performance">
+                        <div class="sector-item">
+                            <span class="sector-name">Technology</span>
+                            <div class="performance-bar">
+                                <div class="bar-fill positive" style="width: 85%"></div>
+                            </div>
+                            <span class="performance-value positive">+2.4%</span>
+                        </div>
+                        <div class="sector-item">
+                            <span class="sector-name">Healthcare</span>
+                            <div class="performance-bar">
+                                <div class="bar-fill positive" style="width: 65%"></div>
+                            </div>
+                            <span class="performance-value positive">+1.2%</span>
+                        </div>
+                        <div class="sector-item">
+                            <span class="sector-name">Financial</span>
+                            <div class="performance-bar">
+                                <div class="bar-fill positive" style="width: 45%"></div>
+                            </div>
+                            <span class="performance-value positive">+0.8%</span>
+                        </div>
+                        <div class="sector-item">
+                            <span class="sector-name">Energy</span>
+                            <div class="performance-bar">
+                                <div class="bar-fill negative" style="width: 30%"></div>
+                            </div>
+                            <span class="performance-value negative">-0.5%</span>
+                        </div>
+                        <div class="sector-item">
+                            <span class="sector-name">Real Estate</span>
+                            <div class="performance-bar">
+                                <div class="bar-fill negative" style="width: 20%"></div>
+                            </div>
+                            <span class="performance-value negative">-1.1%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Top Movers</h4>
+                    <div class="movers-tabs">
+                        <button class="tab-btn active" onclick="showMovers('gainers')">Top Gainers</button>
+                        <button class="tab-btn" onclick="showMovers('losers')">Top Losers</button>
+                    </div>
+                    <div class="movers-list" id="gainers">
+                        <div class="mover-item">
+                            <span class="symbol">AAPL</span>
+                            <span class="price">$185.42</span>
+                            <span class="change positive">+3.2%</span>
+                        </div>
+                        <div class="mover-item">
+                            <span class="symbol">MSFT</span>
+                            <span class="price">$378.91</span>
+                            <span class="change positive">+2.8%</span>
+                        </div>
+                        <div class="mover-item">
+                            <span class="symbol">GOOGL</span>
+                            <span class="price">$142.65</span>
+                            <span class="change positive">+2.1%</span>
+                        </div>
+                    </div>
+                    <div class="movers-list hidden" id="losers">
+                        <div class="mover-item">
+                            <span class="symbol">TSLA</span>
+                            <span class="price">$238.45</span>
+                            <span class="change negative">-2.4%</span>
+                        </div>
+                        <div class="mover-item">
+                            <span class="symbol">NFLX</span>
+                            <span class="price">$445.67</span>
+                            <span class="change negative">-1.8%</span>
+                        </div>
+                        <div class="mover-item">
+                            <span class="symbol">META</span>
+                            <span class="price">$325.89</span>
+                            <span class="change negative">-1.5%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Insights -->
+    <section class="weekly-insights">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Weekly Market Insights</h2>
+                <p>Key developments and trends from the past week</p>
+            </div>
+            <div class="insights-timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-date">Dec 15</div>
+                    <div class="timeline-content">
+                        <h4>Federal Reserve Decision</h4>
+                        <p>The Fed maintained interest rates at 5.25-5.50%, signaling a cautious approach to monetary policy amid mixed economic signals.</p>
+                        <div class="impact-indicator positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>Positive Impact</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-date">Dec 13</div>
+                    <div class="timeline-content">
+                        <h4>Inflation Data Release</h4>
+                        <p>Consumer Price Index came in at 3.2% year-over-year, slightly above expectations but showing continued moderation.</p>
+                        <div class="impact-indicator neutral">
+                            <i class="fas fa-minus"></i>
+                            <span>Neutral Impact</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-date">Dec 11</div>
+                    <div class="timeline-content">
+                        <h4>Tech Earnings Surprise</h4>
+                        <p>Major technology companies reported stronger-than-expected quarterly results, driving sector outperformance.</p>
+                        <div class="impact-indicator positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>Positive Impact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-signup">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <h2>Stay Informed with Market Updates</h2>
+                <p>Get weekly market insights and analysis delivered directly to your inbox</p>
+                <form class="newsletter-form-large">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe to Insights</button>
+                </form>
+                <p class="newsletter-disclaimer">Join 15,000+ investors who trust our market analysis. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blueoak.JPG-kWsIU454L09AQXxY7L0eZzSjOGGSLB.jpeg" alt="BlueOak Capitals" class="footer-logo">
+                    <p>Your trusted partner in building wealth and securing financial freedom through professional investment management.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="investment-plans.html">Investment Plans</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="portfolio-management.html">Portfolio Management</a></li>
+                        <li><a href="financial-planning.html">Financial Planning</a></li>
+                        <li><a href="retirement-planning.html">Retirement Planning</a></li>
+                        <li><a href="tools.html">Investment Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest market insights and investment tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BlueOak Capitals. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-submit-btn">Login</button>
+                <p class="auth-switch">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Your Account</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required> I agree to the Terms & Conditions
+                    </label>
+                </div>
+                <button type="submit" class="auth-submit-btn">Create Account</button>
+                <p class="auth-switch">Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="market-insights.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
